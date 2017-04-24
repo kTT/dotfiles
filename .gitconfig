@@ -1,0 +1,31 @@
+[alias]
+	ci = commit -v
+	st = status -sb
+	stu = status -sb -uno
+	br = branch
+	co = checkout
+	logod = log --oneline --decorate
+	logo = log --oneline
+	logd = log --decorate
+	one = log --graph --all --pretty=format:'%Cred%h%Creset - %Cgreen(%cr)%Creset %s%C(yellow)%d%Creset' --abbrev-commit --date=relative
+	di = diff --word-diff
+	timeline = log --graph --branches --pretty=oneline --decorate
+[core]
+	editor = vim
+	autocrlf = input
+;[merge]
+	;tool = vimdiff
+[merge]
+    tool = threesome
+
+[mergetool "threesome"]
+        cmd = "vim -f $BASE $LOCAL $REMOTE $MERGED -c 'ThreesomeInit'"
+        trustExitCode = true
+[color]
+	ui = auto
+	branch = auto
+	diff = auto
+	interactive = auto
+	status = auto
+[push]
+	default = tracking
